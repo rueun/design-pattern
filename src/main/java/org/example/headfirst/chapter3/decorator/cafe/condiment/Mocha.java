@@ -1,6 +1,7 @@
 package org.example.headfirst.chapter3.decorator.cafe.condiment;
 
 import org.example.headfirst.chapter3.decorator.cafe.beverage.Beverage;
+import org.example.headfirst.chapter3.decorator.cafe.beverage.Size;
 
 public class Mocha extends CondimentDecorator {
 
@@ -10,7 +11,11 @@ public class Mocha extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + .20;
+        if (beverage.getSize() == Size.TALL)
+            return beverage.cost() + .15;
+        else if (beverage.getSize() == Size.GRANDE)
+            return beverage.cost() + .20;
+        return beverage.cost() + .25;
     }
 
     @Override

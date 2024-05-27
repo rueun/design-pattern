@@ -2,12 +2,17 @@ package org.example.headfirst.chapter3.decorator.cafe.beverage;
 
 public class HouseBlend extends Beverage {
 
-    public HouseBlend() {
-        description = "House Blend Coffee";
+    public HouseBlend(final Size size) {
+        this.size = size;
+        this.description = "House Blend Coffee";
     }
 
     @Override
     public double cost() {
-        return .89;
+        if (size == Size.TALL)
+            return .79;
+        else if (size == Size.GRANDE)
+            return .89;
+        return .99;
     }
 }

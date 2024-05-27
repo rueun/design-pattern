@@ -1,6 +1,7 @@
 package org.example.headfirst.chapter3.decorator.cafe.condiment;
 
 import org.example.headfirst.chapter3.decorator.cafe.beverage.Beverage;
+import org.example.headfirst.chapter3.decorator.cafe.beverage.Size;
 
 public class Milk extends CondimentDecorator {
 
@@ -10,7 +11,11 @@ public class Milk extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + .10;
+        if (beverage.getSize() == Size.TALL)
+            return beverage.cost() + .05;
+        else if (beverage.getSize() == Size.GRANDE)
+            return beverage.cost() + .10;
+        return beverage.cost() + .15;
     }
 
     @Override
