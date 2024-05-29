@@ -3,9 +3,9 @@ package org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza;
 import org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza.ingredient.PizzaIngredientFactory;
 
 public abstract class ClamPizza extends Pizza {
-    private PizzaIngredientFactory ingredientFactory;
+    private final PizzaIngredientFactory ingredientFactory;
 
-    public ClamPizza(final PizzaIngredientFactory ingredientFactory) {
+    protected ClamPizza(final PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 
