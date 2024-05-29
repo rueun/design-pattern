@@ -2,10 +2,11 @@ package org.example.headfirst.chapter4.factory.pizzastore.ex3.store;
 
 import org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza.*;
 import org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza.ingredient.NYPizzaIngredientFactory;
+import org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza.ingredient.PizzaIngredientFactory;
 
 public class NYPizzaStore extends PizzaStore {
 
-    private final NYPizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+    private final PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
 
     @Override
     protected Pizza createPizza(final String type) {
