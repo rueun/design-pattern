@@ -5,7 +5,7 @@ import org.example.headfirst.chapter4.factory.pizzastore.ex3.pizza.ingredient.Pi
 public abstract class VeggiePizza extends Pizza {
     private final PizzaIngredientFactory ingredientFactory;
 
-    private VeggiePizza(final PizzaIngredientFactory ingredientFactory) {
+    protected VeggiePizza(final PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 
