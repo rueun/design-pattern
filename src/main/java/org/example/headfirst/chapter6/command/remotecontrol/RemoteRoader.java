@@ -16,24 +16,14 @@ public class RemoteRoader {
         final GarageDoor garageDoor = new GarageDoor("Garage");
         final Stereo stereo = new Stereo("Living Room");
 
-        final LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
-        final LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
-        final LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
-        final LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
+        StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
+        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
 
-        final CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
-        final CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
-
-        final GarageDoorUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
-        final GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
-
-        final StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
-        final StereoOffCommand stereoOff = new StereoOffCommand(stereo);
-
-        remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
-        remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
-        remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
-        remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
+        remoteControl.setCommand(0, livingRoomLight::on, livingRoomLight::off);
+        remoteControl.setCommand(1, kitchenLight::on, kitchenLight::off);
+        remoteControl.setCommand(2, ceilingFan::high, ceilingFan::off);
+        remoteControl.setCommand(3, garageDoor::up, garageDoor::down);
+        remoteControl.setCommand(4, stereoOnWithCD, stereoOff);
 
         System.out.println(remoteControl);
 
@@ -45,6 +35,8 @@ public class RemoteRoader {
         remoteControl.offButtonWasPushed(2);
         remoteControl.onButtonWasPushed(3);
         remoteControl.offButtonWasPushed(3);
-        remoteControl.onButtonWasPushed(3);
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(4);
+        remoteControl.onButtonWasPushed(4);
     }
 }
