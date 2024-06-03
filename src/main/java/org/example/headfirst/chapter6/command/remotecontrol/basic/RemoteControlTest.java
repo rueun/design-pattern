@@ -1,9 +1,9 @@
-package org.example.headfirst.chapter6.command.remotecontrol;
+package org.example.headfirst.chapter6.command.remotecontrol.basic;
 
-import org.example.headfirst.chapter6.command.remotecontrol.command.GarageDoorUpCommand;
-import org.example.headfirst.chapter6.command.remotecontrol.command.LightOnCommand;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.GarageDoor;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.Light;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.command.GarageDoorUpCommand;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.command.LightOnCommand;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.GarageDoor;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.Light;
 
 public class RemoteControlTest {
     public static void main(String[] args) {

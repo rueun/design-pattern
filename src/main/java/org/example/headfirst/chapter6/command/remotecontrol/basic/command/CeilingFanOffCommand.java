@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol.command;
+package org.example.headfirst.chapter6.command.remotecontrol.basic.command;
 
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.CeilingFan;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.CeilingFan;
 
 public class CeilingFanOffCommand implements Command {
     private final CeilingFan ceilingFan;

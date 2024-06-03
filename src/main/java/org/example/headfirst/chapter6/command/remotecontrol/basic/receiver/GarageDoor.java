@@ -1,4 +1,4 @@
-package org.example.headfirst.chapter6.command.remotecontrol.receiver;
+package org.example.headfirst.chapter6.command.remotecontrol.basic.receiver;
 
 public class GarageDoor {
     private String location;

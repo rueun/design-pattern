@@ -1,10 +1,10 @@
-package org.example.headfirst.chapter6.command.remotecontrol;
+package org.example.headfirst.chapter6.command.remotecontrol.basic;
 
-import org.example.headfirst.chapter6.command.remotecontrol.command.*;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.CeilingFan;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.GarageDoor;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.Light;
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.Stereo;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.command.*;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.CeilingFan;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.GarageDoor;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.Light;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.Stereo;
 
 public class RemoteRoader {
     public static void main(String[] args) {

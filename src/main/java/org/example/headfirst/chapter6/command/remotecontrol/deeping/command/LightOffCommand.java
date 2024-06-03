@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol.command;
+package org.example.headfirst.chapter6.command.remotecontrol.deeping.command;
 
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.Light;
+import org.example.headfirst.chapter6.command.remotecontrol.deeping.receiver.Light;
 
 public class LightOffCommand implements Command {
     private final Light light;
@@ -12,5 +12,10 @@ public class LightOffCommand implements Command {
     @Override
     public void execute() {
         light.off();
+    }
+
+    @Override
+    public void undo() {
+        light.on();
     }
 }

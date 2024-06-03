@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol;
+package org.example.headfirst.chapter6.command.remotecontrol.basic;
 
-import org.example.headfirst.chapter6.command.remotecontrol.command.Command;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.command.Command;
 
 public class SimpleRemoteControl {
     private Command slot;

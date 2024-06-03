@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol.command;
+package org.example.headfirst.chapter6.command.remotecontrol.deeping.command;
 
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.CeilingFan;
+import org.example.headfirst.chapter6.command.remotecontrol.deeping.receiver.CeilingFan;
 
 public class CeilingFanOnCommand implements Command {
     private final CeilingFan ceilingFan;
@@ -12,5 +12,10 @@ public class CeilingFanOnCommand implements Command {
     @Override
     public void execute() {
         ceilingFan.high();
+    }
+
+    @Override
+    public void undo() {
+        ceilingFan.off();
     }
 }

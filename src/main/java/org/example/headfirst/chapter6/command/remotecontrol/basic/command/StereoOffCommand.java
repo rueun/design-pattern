@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol.command;
+package org.example.headfirst.chapter6.command.remotecontrol.basic.command;
 
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.Stereo;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.Stereo;
 
 public class StereoOffCommand implements Command {
 

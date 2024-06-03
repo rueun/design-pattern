@@ -1,4 +1,4 @@
-package org.example.headfirst.chapter6.command.remotecontrol.receiver;
+package org.example.headfirst.chapter6.command.remotecontrol.deeping.receiver;
 
 public class CeilingFan {
     private final String location;

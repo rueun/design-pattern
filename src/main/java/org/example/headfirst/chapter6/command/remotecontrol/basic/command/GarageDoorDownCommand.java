@@ -1,6 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol.command;
+package org.example.headfirst.chapter6.command.remotecontrol.basic.command;
 
-import org.example.headfirst.chapter6.command.remotecontrol.receiver.GarageDoor;
+import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.GarageDoor;
 
 public class GarageDoorDownCommand implements Command {
 
