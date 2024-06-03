@@ -1,7 +1,10 @@
-package org.example.headfirst.chapter6.command.remotecontrol;
+package org.example.headfirst.chapter6.command.remotecontrol.receiver;
 
 public class GarageDoor {
-    public GarageDoor() {
+    private String location;
+
+    public GarageDoor(final String location) {
+        this.location = location;
     }
 
     public void up() {

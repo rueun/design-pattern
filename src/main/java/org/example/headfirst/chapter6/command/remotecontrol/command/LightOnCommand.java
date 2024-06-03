@@ -1,4 +1,6 @@
-package org.example.headfirst.chapter6.command.remotecontrol;
+package org.example.headfirst.chapter6.command.remotecontrol.command;
+
+import org.example.headfirst.chapter6.command.remotecontrol.receiver.Light;
 
 public class LightOnCommand implements Command {
     private final Light light;
@@ -8,7 +10,7 @@ public class LightOnCommand implements Command {
     }
 
     @Override
-    public void exetute() {
+    public void execute() {
         light.on();
     }
 }
