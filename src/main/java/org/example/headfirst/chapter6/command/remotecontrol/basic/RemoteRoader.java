@@ -1,5 +1,6 @@
 package org.example.headfirst.chapter6.command.remotecontrol.basic;
 
+
 import org.example.headfirst.chapter6.command.remotecontrol.basic.command.*;
 import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.CeilingFan;
 import org.example.headfirst.chapter6.command.remotecontrol.basic.receiver.GarageDoor;
@@ -16,27 +17,33 @@ public class RemoteRoader {
         final GarageDoor garageDoor = new GarageDoor("Garage");
         final Stereo stereo = new Stereo("Living Room");
 
-        StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
-        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+        final LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+        final LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+        final LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+        final LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
 
-        remoteControl.setCommand(0, livingRoomLight::on, livingRoomLight::off);
-        remoteControl.setCommand(1, kitchenLight::on, kitchenLight::off);
-        remoteControl.setCommand(2, ceilingFan::high, ceilingFan::off);
-        remoteControl.setCommand(3, garageDoor::up, garageDoor::down);
+        final CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+        final CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+
+        final GarageDoorUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
+        final GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
+
+        final StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
+        final StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+
+        remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+        remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
+        remoteControl.setCommand(3, garageDoorUp, garageDoorDown);
         remoteControl.setCommand(4, stereoOnWithCD, stereoOff);
 
         System.out.println(remoteControl);
 
         remoteControl.onButtonWasPushed(0);
-        remoteControl.offButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+
         remoteControl.onButtonWasPushed(1);
         remoteControl.offButtonWasPushed(1);
-        remoteControl.onButtonWasPushed(2);
-        remoteControl.offButtonWasPushed(2);
-        remoteControl.onButtonWasPushed(3);
-        remoteControl.offButtonWasPushed(3);
-        remoteControl.onButtonWasPushed(4);
-        remoteControl.offButtonWasPushed(4);
-        remoteControl.onButtonWasPushed(4);
+        remoteControl.undoButtonWasPushed();
     }
 }
