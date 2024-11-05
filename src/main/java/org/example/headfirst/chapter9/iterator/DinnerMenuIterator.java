@@ -1,5 +1,7 @@
 package org.example.headfirst.chapter9.iterator;
 
+import java.util.Iterator;
+
 public class DinnerMenuIterator implements Iterator {
 
     MenuItem[] menuItems;
@@ -21,5 +23,10 @@ public class DinnerMenuIterator implements Iterator {
     @Override
     public MenuItem next() {
         return menuItems[position++];
+    }
+
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException("This operation is not supported");
     }
 }
