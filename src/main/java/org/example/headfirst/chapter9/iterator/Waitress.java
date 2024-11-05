@@ -10,23 +10,21 @@ public class Waitress {
     }
 
     public void printMenu() {
+        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator dinerIterator = dinerMenu.createIterator();
+
         System.out.println("MENU\n----\nBREAKFAST");
-        for (MenuItem menuItem : pancakeHouseMenu.getMenuItems()) {
-            System.out.print(menuItem.getName() + ", ");
-            System.out.print(menuItem.getPrice() + " -- ");
-            System.out.println(menuItem.getDescription());
-        }
-
+        printMenu(pancakeIterator);
         System.out.println("\nLUNCH");
-        for (int i = 0; i < dinerMenu.getMenuItems().length ; i++) {
-            MenuItem menuItem = dinerMenu.getMenuItems()[i];
-            if (menuItem == null) {
-                break;
-            }
+        printMenu(dinerIterator);
+    }
+
+    private void printMenu(Iterator iterator) {
+        while (iterator.hasNext()) {
+            MenuItem menuItem = (MenuItem) iterator.next();
             System.out.print(menuItem.getName() + ", ");
             System.out.print(menuItem.getPrice() + " -- ");
             System.out.println(menuItem.getDescription());
-
         }
     }
 }
